@@ -1,11 +1,12 @@
 export default class Time {
   static getTimeFromSeconds(secs) {
+//	60 * 60 * 24 * 30 * 12
 	const totalSeconds = Math.ceil(secs);
-	const years = Math.floor(totalSeconds / (60 * 60 * 24 * 30 * 12));
-	const months = Math.floor((totalSeconds % (60 * 60 * 24 * 30 * 12)) / (60 * 60 * 24 * 30));
-	const days = Math.floor((totalSeconds % (60 * 60 * 24 * 30)) / (60 * 60 * 24));
-	const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
-	const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+	const years = Math.floor(totalSeconds / (31104000));
+	const months = Math.floor((totalSeconds % (31104000)) / (2592000));
+	const days = Math.floor((totalSeconds % (2592000)) / (86400));
+	const hours = Math.floor((totalSeconds % (86400)) / (3600));
+	const minutes = Math.floor((totalSeconds % (3600)) / 60);
 	const seconds = Math.floor(totalSeconds % 60);
 	
 	return {

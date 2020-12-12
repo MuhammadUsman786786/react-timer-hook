@@ -8,6 +8,8 @@ interface TimerResult {
     minutes: number;
     hours: number;
     days: number;
+    months: number;
+    years: number;
     isRunning: boolean;
     start: () => void;
     pause: () => void;
@@ -26,6 +28,8 @@ interface StopwatchResult {
     minutes: number;
     hours: number;
     days: number;
+    months: number;
+    years: number;
     isRunning: boolean;
     start: () => void;
     pause: () => void;
